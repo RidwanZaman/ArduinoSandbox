@@ -1,35 +1,32 @@
-int redPin = 9;
-int greenPin = 10;
-int bluePin = 11;
+int red = 9;
+int blue = 11;
+int green= 10;
+int speed = 20;
 
 void setup() {
-  pinMode(redPin, OUTPUT);
-  pinMode(greenPin, OUTPUT);
-  pinMode(bluePin, OUTPUT);
+  pinMode(red, OUTPUT);
+  pinMode(green, OUTPUT);
+  pinMode(blue, OUTPUT);
 }
 
 void loop() {
-  // Red -> Green
-  for (int i = 0; i <= 255; i++) {
-    analogWrite(redPin, 255 - i);
-    analogWrite(greenPin, i);
-    analogWrite(bluePin, 0);
-    delay(10);
+  //red > blue
+  for (int i = 0; i<=255; i++) {
+    analogWrite(red, 255-i);
+    analogWrite(blue, i);
+    delay(speed);
   }
 
-  // Green -> Blue
-  for (int i = 0; i <= 255; i++) {
-    analogWrite(greenPin, 255 - i);
-    analogWrite(bluePin, i);
-    analogWrite(redPin, 0);
-    delay(10);
+  // blue > green
+  for (int i = 0; i<=255; i++) {
+    analogWrite(blue, 255-i);
+    analogWrite(green, i);
+    delay(speed);
   }
-
-  // Blue -> Red
-  for (int i = 0; i <= 255; i++) {
-    analogWrite(bluePin, 255 - i);
-    analogWrite(redPin, i);
-    analogWrite(greenPin, 0);
-    delay(10);
+  // green > red
+  for (int i = 0; i<=255; i++) {
+    analogWrite(green, 255-i);
+    analogWrite(red, i);
+    delay(speed);
   }
 }
