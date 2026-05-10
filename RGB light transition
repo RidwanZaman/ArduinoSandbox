@@ -1,7 +1,7 @@
 int red = 9;
 int blue = 11;
 int green= 10;
-int speed = 20;
+int speed = 15;
 
 void setup() {
   pinMode(red, OUTPUT);
