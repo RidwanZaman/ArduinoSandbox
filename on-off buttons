@@ -1,0 +1,21 @@
+int on = 9;
+int off = 10;
+int power = 13;
+void setup() {
+  pinMode(on, INPUT_PULLUP);
+  pinMode(off, INPUT_PULLUP);
+  pinMode(power, OUTPUT);
+
+}
+
+void loop() {
+  if (digitalRead(on) == LOW)
+  {
+    digitalWrite(power, HIGH);
+  }
+  if (digitalRead(off) == LOW)
+  {
+    digitalWrite(power, LOW);
+  }
+
+}
