@@ -1,0 +1,32 @@
+int button = 10;
+int power = 13;
+
+int current_state = LOW;
+int previous_button = HIGH;
+
+void setup() {
+    pinMode(button, INPUT_PULLUP);
+    pinMode(power, OUTPUT);
+}
+
+void loop() {
+
+    int button_state = digitalRead(button);
+
+    // Button was just pressed
+    if (button_state == LOW && previous_button == HIGH)
+    {
+        if (current_state == LOW)
+        {
+            digitalWrite(power, HIGH);
+            current_state = HIGH;
+        }
+        else
+        {
+            digitalWrite(power, LOW);
+            current_state = LOW;
+        }
+    }
+
+    previous_button = button_state;
+}
